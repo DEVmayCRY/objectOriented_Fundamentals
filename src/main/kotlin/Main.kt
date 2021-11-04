@@ -1,3 +1,7 @@
+import alunos.Estudante
+import metodos.Cursos
+import java.lang.Exception
+
 //https://github.com/generation-org/KOTLIN/tree/main/Object%20Oriented%20Programming%20-%20Fundamentals
 
 fun main(args: Array<String>) {
@@ -5,7 +9,7 @@ fun main(args: Array<String>) {
     var guilhonardo = Estudante("Guilhonardo", "Calderaro"
         , 123, 78.0, 6)
 
-    var milerio = Estudante("Milério", "Xapizko"
+    var milerio = Estudante("Milerio", "Xapizko"
         , 124, 11.0, 5)
 
     var sanada = Estudante("Yukimura", "Sanada"
@@ -32,5 +36,11 @@ fun main(args: Array<String>) {
 
     cursoIngles.quantosEstudantes()
     cursoIngles.melhorGrade()
+
+    try {
+        cursoIngles.verificarAluno(milerio)
+    }catch (e: Exception){
+        println(e.message)
+    }
 
 }

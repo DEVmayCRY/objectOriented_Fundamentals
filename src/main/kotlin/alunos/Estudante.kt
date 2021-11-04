@@ -1,4 +1,6 @@
-class Estudante (var lastNome: String?, var firstNome: String?, var alunoRa: Int){
+package alunos
+
+class Estudante (private var lastNome: String?, var firstNome: String?, var alunoRa: Int){
 
     var nota = 0.0
     var ano = 0
@@ -13,11 +15,11 @@ class Estudante (var lastNome: String?, var firstNome: String?, var alunoRa: Int
                 this.ano = ano
                 }
 
-    fun fullName (){
-        println("$lastNome $firstNome")
+    fun fullName (): String{
+        return "$lastNome $firstNome"
     }
 
-    val aprovado : Boolean
+    private val aprovado : Boolean //privado
         get() {
             return nota >= 60.0
         }
